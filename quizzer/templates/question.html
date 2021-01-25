@@ -9,7 +9,7 @@
   <form action="{{ url_for('eval_choice') }}" method="POST">
     <ul class="options">
       {% for choice in q.choices %}
-      <li class="option"><input type="radio" name="option" id="{{ loop.index }}" value="{{ choice }}"><label class="option-content" for="{{ loop.index }}">{{ choice }}</label></li>
+      <li class="option"><input type="radio" name="option" id="{{ loop.index }}" value="{{ choice }}"><label class="option-content" for="{{ loop.index }}">{{ choice|safe }}</label></li>
       {% endfor %}
     </ul>
     <div class="nav-buttons">

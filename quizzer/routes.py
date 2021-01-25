@@ -8,7 +8,7 @@ def index():
 	session['rights'] = 0
 	session['num_questions'] = len(QUESTIONS)
 
-	return redirect(url_for('ask'))
+	return render_template('index.html')
 
 @app.route('/question')
 def ask():

@@ -1,41 +1,44 @@
 from quizzer import app
-from quizzer.questions import QUESTIONS
+from quizzer.questions import QuestionBox, get_questions
 from flask import render_template, request, session, url_for, redirect
+
+question_box = QuestionBox(session, get_questions('questions.json'))
+
 
 @app.route('/')
 def index():
-	session['q_index'] = 0
-	session['rights'] = 0
-	session['num_questions'] = len(QUESTIONS)
+	question_box.reset()
 
 	return render_template('index.html')
 
+
 @app.route('/question')
 def ask():
-	if session['q_index'] == session['num_questions']:
+	if not question_box.has_questions():
 		return redirect(url_for('results'))
 
-	question = QUESTIONS[session['q_index']]
-	button_text = 'Get Results' if session['q_index'] == session['num_questions'] - 1 else 'Next'
+	data = {
+		'button_text': question_box.get_button_text(),
+		'q': question_box.question,
+	}
 
-	session['answer'] = question.get('choices')[question.get('answer_index')]
+	print(data['q'].options)
 
-	return render_template('question.html', button_text=button_text, q=question)
+	return render_template('question.html', **data)
+
 
 @app.route('/eval_choice', methods=['POST'])
 def eval_choice():
-	chosen_option = request.form.get('option')
-
-	if chosen_option == session['answer']:
-		session['rights'] += 1
-
-	session['q_index'] += 1
+	question_box.submit_answer(request.form.get('option'))
 
 	return redirect(url_for('ask'))
 
+
 @app.route('/results')
 def results():
-	return render_template(
-		'results.html',
-		correct_answers=session['rights'],
-		total_questions=session['num_questions'])
+	data = {
+		'correct_answers': question_box.right_answers_count,
+		'total_questions': question_box.num_questions,
+	}
+
+	return render_template('results.html', **data)

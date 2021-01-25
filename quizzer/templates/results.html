@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<div class="container">
-  <h1>{{ correct_answers }} / {{ total_questions }}</h1>
-</div>
+<h1 class="title">Python Quiz</h1>
+<h1 class="score">You answered {{ correct_answers }} correct out of {{ total_questions }}.</h1>
 {% endblock body %}

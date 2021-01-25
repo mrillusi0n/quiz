@@ -2,21 +2,21 @@
 
 {% block body %}
 <div class="container">
-  <h1 class="title">Python Quiz</h1>
-  <div class="question-box">
-    <div class="question">
-      <h1>{{ q.question }}</h1>
-    </div>
-    <form action="{{ url_for('eval_choice') }}" method="POST">
-      <ul class="options">
-        {% for choice in q.choices %}
-        <li class="option"><input type="radio" name="option" id="{{ loop.index }}" value="{{ choice }}"><label class="option-content" for="{{ loop.index }}">{{ choice }}</label></li>
-        {% endfor %}
-      </ul>
-      <div class="nav-buttons">
-        <input class="next-btn" type="submit" value="{{ button_text }}">
-      </div>
-    </form>
+<h1 class="title">Python Quiz</h1>
+<div class="question-box">
+  <div class="question">
+    <h1>{{ q.question }}</h1>
   </div>
+  <form action="{{ url_for('eval_choice') }}" method="POST">
+    <ul class="options">
+      {% for choice in q.choices %}
+      <li class="option"><input type="radio" name="option" id="{{ loop.index }}" value="{{ choice }}"><label class="option-content" for="{{ loop.index }}">{{ choice }}</label></li>
+      {% endfor %}
+    </ul>
+    <div class="nav-buttons">
+      <input class="next-btn" type="submit" value="{{ button_text }}">
+    </div>
+  </form>
+</div>
 </div>
 {% endblock body %}

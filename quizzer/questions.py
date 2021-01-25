@@ -1,7 +1,12 @@
 QUESTIONS = [
 	{
 		'question': 'Which one is not an operator?',
-		'choices': ['**', '|', '++', '//'],
+		'choices': [
+			'<code>**</code>',
+			'<code>|</code>',
+			'<code>++</code>',
+			'<code>//</code>',
+		],
 		'answer_index': 2,
 	},
 	{

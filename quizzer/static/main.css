@@ -88,3 +88,10 @@ input[type="radio"]:checked + .option-content {
 .next-btn:hover {
   background: rgb(200, 233, 173);
 }
+
+.score {
+  text-align: center;
+  align-self: center;
+  grid-row: 1 / -1;
+  grid-column-start: 2;
+}

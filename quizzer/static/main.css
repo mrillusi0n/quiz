@@ -10,6 +10,11 @@ body {
   font-family: sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: initial;
+}
+
 input[type="radio"] {
   display: none;
 }
@@ -27,6 +32,16 @@ input[type="radio"]:checked + .option-content {
     ". question .";
   height: 100vh;
   padding: 4rem;
+}
+
+.welcome-text {
+  grid-area: title;
+  text-align: center;
+}
+
+.start-btn {
+  grid-area: question;
+  place-self: start center;
 }
 
 .title {
@@ -75,7 +90,7 @@ input[type="radio"]:checked + .option-content {
   justify-content: center;
 }
 
-.next-btn {
+.btn {
   padding: 1.8rem 2.8rem;
   font: inherit;
   text-transform: uppercase;
@@ -88,7 +103,7 @@ input[type="radio"]:checked + .option-content {
   transition: background 320ms;
   outline: none;
 }
-.next-btn:hover {
+.btn:hover {
   background: rgb(200, 233, 173);
 }
 

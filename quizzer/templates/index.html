@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1 class="welcome-text">Welcome to Python Beginner Quiz!</h1>
-<a href="{{ url_for('ask') }}" class="btn start-btn">Start the Quiz</a>
+<div class="container">
+  <header class="welcome-header">
+    <h1 class="welcome-text">Welcome to <span>SoP</span>'s Beginner Python Quiz.</h1>
+    <p class="subtitle">Contains 2 questions.</p>
+  </header>
+  <a href="{{ url_for('ask') }}" class="btn start-btn">Start the Quiz</a>
+</div>
 {% endblock body %}

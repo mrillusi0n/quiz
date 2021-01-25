@@ -61,7 +61,7 @@ input[type="radio"]:checked + .option-content {
 }
 
 .option-content {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.4rem;
   display: block;
   padding: 1.8rem;

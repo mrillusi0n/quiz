@@ -15,7 +15,6 @@ def ask():
 	if session['q_index'] == session['num_questions']:
 		return redirect(url_for('results'))
 
-
 	question = QUESTIONS[session['q_index']]
 	button_text = 'Get Results' if session['q_index'] == session['num_questions'] - 1 else 'Next'
 
@@ -26,9 +25,12 @@ def ask():
 @app.route('/eval_choice', methods=['POST'])
 def eval_choice():
 	chosen_option = request.form.get('option')
+
 	if chosen_option == session['answer']:
 		session['rights'] += 1
+
 	session['q_index'] += 1
+
 	return redirect(url_for('ask'))
 
 @app.route('/results')

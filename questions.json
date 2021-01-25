@@ -1,0 +1,18 @@
+[
+	{
+		"question": "Which one is not an operator?",
+		"incorrect_options": ["**", "|", "//"],
+    "answer": "++",
+    "option_font_type": "monospace"
+	},
+	{
+		"question": "What does REPL mean in Python?",
+		"incorrect_options": [
+			"Robustly Executed Python Languages",
+			"Read Execute Python Loop",
+			"Realtime Evaluated Python Language"
+		],
+		"answer": "Read Evaluate Print Loop",
+    "option_font_type": "sans-serif"
+	}
+]

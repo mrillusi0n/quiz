@@ -15,6 +15,10 @@ a {
   color: initial;
 }
 
+code {
+  font-family: 'Roboto Mono', monospace;
+}
+
 input[type="radio"] {
   display: none;
 }
@@ -31,7 +35,7 @@ input[type="radio"]:checked + .option-content {
     ". title ."
     ". question .";
   height: 100vh;
-  padding: 4rem;
+  padding: 2rem;
 }
 
 .welcome-text {
@@ -47,7 +51,7 @@ input[type="radio"]:checked + .option-content {
 .title {
   grid-area: title;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2rem;
   letter-spacing: .5rem;
   text-align: center;
   opacity: 0.1;
@@ -55,7 +59,7 @@ input[type="radio"]:checked + .option-content {
 
 .question-box {
   grid-area: question;
-  padding: 1.8rem;
+  padding: 1rem;
   margin-top: 1.8rem;
   align-self: start;
 }
@@ -72,14 +76,13 @@ input[type="radio"]:checked + .option-content {
 
 .option {
   list-style: none;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .option-content {
-  font-family: 'Roboto Mono', monospace;
   font-size: 1.4rem;
   display: block;
-  padding: 1.8rem;
+  padding: 1rem 1.4rem;
   border: 2px solid #929292;
   border-radius: 8px;
   transition: background 320ms;
@@ -102,14 +105,22 @@ input[type="radio"]:checked + .option-content {
   cursor: pointer;
   transition: background 320ms;
   outline: none;
+  display: block;
+  text-align: center;
 }
 .btn:hover {
   background: rgb(200, 233, 173);
 }
 
+.result-container {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .score {
   text-align: center;
-  align-self: center;
-  grid-row: 1 / -1;
-  grid-column-start: 2;
 }

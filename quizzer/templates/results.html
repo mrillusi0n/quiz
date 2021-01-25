@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1 class="title">Python Quiz</h1>
-<div class="result-container">
-  <h1 class="score">You answered {{ correct_answers }} correct out of {{ total_questions }}.</h1>
-  <a href="{{ url_for('index') }}" class="btn retake-btn">Retake</a>
+<div class="container">
+  <h1 class="title">Python Quiz</h1>
+  <div class="result-container">
+    <h1 class="score">You answered {{ correct_answers }} correct out of {{ total_questions }}.</h1>
+    <a href="{{ url_for('index') }}" class="btn retake-btn">Retake</a>
+  </div>
 </div>
 {% endblock body %}

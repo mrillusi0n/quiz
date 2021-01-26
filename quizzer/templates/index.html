@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<div class="container">
+<div class="h-container">
   <header class="welcome-header">
     <h1 class="welcome-text">Welcome to <span>SoP</span>'s Beginner Python Quiz.</h1>
-    <p class="subtitle">Contains 2 questions.</p>
+    <p class="subtitle">Contains {{ qc }} questions.</p>
   </header>
   <a href="{{ url_for('ask') }}" class="btn start-btn">Start the Quiz</a>
 </div>

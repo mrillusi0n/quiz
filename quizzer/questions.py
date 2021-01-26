@@ -61,7 +61,7 @@ class QuestionBox:
 	def q_index(self, val):
 		self.session['q_index'] = val
 
-	def reset(self):
+	def init(self):
 		self.q_index = 0
 		self.right_answers_count = 0
 		self.num_questions = len(self.questions)

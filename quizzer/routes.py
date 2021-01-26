@@ -7,9 +7,9 @@ question_box = QuestionBox(session, get_questions('questions.json'))
 
 @app.route('/')
 def index():
-	question_box.reset()
+	question_box.init()
 
-	return render_template('index.html')
+	return render_template('index.html', qc=question_box.num_questions)
 
 
 @app.route('/question')

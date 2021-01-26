@@ -14,5 +14,15 @@
 		],
 		"answer": "Read Evaluate Print Loop",
     "option_font_type": "sans-serif"
+	},
+	{
+		"question": "What string will be returned from <code>\"Hello, world.\"[1::-2]</code>?",
+		"incorrect_options": [
+			"\".lo ol\"",
+			"\"\"",
+			"\"drw,le\""
+		],
+		"answer": "\"e\"",
+    "option_font_type": "monospace"
 	}
 ]
